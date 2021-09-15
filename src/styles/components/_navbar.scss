@@ -1,0 +1,161 @@
+@use '../tools/variables';
+@use '../tools/mixins';
+
+.nav-cell
+{
+	// So this is referencing the nav keywords in the grid-templates layout.
+	grid-area: nav;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+
+	@include mixins.main-border();
+	padding: .5rem;
+	
+	background-color: variables.$main-color;
+	
+	.nav-brand
+	{
+		width: 3rem;
+		align-self: start;
+	}
+	.nav-brand:hover
+	{
+		background-color: initial;
+		color: white;
+	}
+
+	li
+	{
+		display: inline-block;
+	}
+	
+	a, h2, span
+	{
+		color: white;
+		text-decoration: none;
+		margin: 0 .5rem;
+		padding: 3px;
+		border-radius: .25rem;
+	}
+
+	a:hover
+	{
+		background-color: #fff;
+		color: black;
+	}
+	
+	.current-menu-item a, .current_page_parent a
+	{
+		background-color: white;
+		color: black;
+	}
+
+	form
+	{
+		margin-bottom: 1.5rem;
+		align-self: flex-end;
+	}
+
+	#searchsubmit
+	{
+		color: white;
+		background-color: black;
+
+		height: 1.5rem;
+	}
+
+	#s
+	{
+		@include mixins.main-border();
+		height: 1.3rem;
+	}
+}
+
+.dropdown_
+{
+	display: none;
+}
+
+.dropdown_:hover
+{
+	cursor: pointer;
+	color: black;
+	background-color: white;
+}
+
+.nav-items
+{
+	display: flex;
+	align-self: flex-end;
+}
+
+// Navbar Media Query
+@media only screen and (max-width: variables.$large-breakpoint)
+{
+	.dropdown_
+	{
+		display: flex;
+		cursor: pointer;
+	}
+
+	.nav-items
+	{
+		position: absolute;
+		z-index: 100;
+		right: 1.7rem;
+		top: 108px;
+		
+		transition-duration: .2s;
+
+		opacity: 0;
+		overflow: hidden;
+
+		padding: 8px 8px 0 8px;
+		background-color: variables.$main-color;
+		border-radius: .25rem;
+		border: solid black 3px;
+
+		ul
+		{
+			display: flex;
+			flex-direction: column;
+		}
+		li
+		{
+			margin: 10px;
+		}
+		input
+		{
+			width: 4rem;
+		}
+	}
+
+}
+
+@media only screen and (max-width: variables.$small-breakpoint)
+{
+	.nav-items
+	{
+		position: absolute;
+		top: 158px;
+	}
+	.nav-cell
+	{
+		flex-direction: column;
+	}
+}
+
+.column-menu
+{
+// display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+}
+
+.no-highlight .current-menu-item a, .no-highlight .current_page_parent a
+{
+	background-color: initial;
+	color: white;
+}
