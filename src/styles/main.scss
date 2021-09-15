@@ -1,6 +1,5 @@
-@import 'variables.scss';
-@import 'mixins.scss';
-@import 'example-react-component.scss';
+@use 'children/mixins';
+@use 'children/variables';
 
 html, body {
   background-color: #FFF;
@@ -10,20 +9,20 @@ body {
   color: #333;
   font-family: sans-serif;
   font-size: .9rem;
-  @include atSmall {
+  @include mixins.atSmall {
     padding: 20px;
     font-size: 1.1rem;
   }
-  @include atMedium {
+  @include mixins.atMedium {
     padding: 60px;
     font-size: 1.2rem;
   }
 }
 
 a:link, a:visited {
-  color: $primaryColor;
+  color: variables.$primaryColor;
 }
 
 a:hover {
-  color: $secondaryColor;
+  color: variables.$secondaryColor;
 }
