@@ -4,7 +4,7 @@ function Header()
 {
 	return(
 		<nav className="nav-cell" id="nav-cell-change">
-			<h2>a-reilly.dev</h2>
+			<h2>ja's reactheme</h2>
 			<div className="column nav-items" id="nav-id">
 				<ul>
 					<li>
