@@ -1,7 +1,11 @@
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer">
+	<footer id="colophon" class="site-footer footer-cell">
 		<?php get_template_part( 'template-parts/footer/footer', 'widgets' ); ?>
+
+    <a href="https://github.com/tinker-dot-bin" target="_blank"><i title="tinker-dot-bin" class="fas fa-code-branch fa-5x" aria-hidden="true"></i><span class="sr-only">tinker-dot-bin</span></a>
+    <a href="https://www.instagram.com/austin_reilly_93/" target="_blank"><i title="@austin_reilly_93" class="fas fa-hashtag fa-5x" aria-hidden="true"></i><span class="sr-only">@austin_reilly_93</span></a>
+
 		<div class="site-info">
 			<?php $blog_info = get_bloginfo( 'name' ); ?>
 			<?php
