@@ -1,0 +1,198 @@
+@use '../tools/mixins';
+@use '../tools/variables';
+
+// ***********************************************
+// Specific Page Components
+
+// Poor Development, please revisit
+
+// Blog Previews
+.blog-preview
+{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	min-height: 33vh;
+
+	margin-bottom: 1rem;
+	padding: .5rem 1rem 1rem 0;
+
+	text-align: center;
+	@include mixins.main-border;
+
+	// The Excerpt Div
+	.blog-excerpt
+	{
+		// padding: 1rem;
+		margin: .5rem;
+		font-size: 1rem;
+	}
+
+	// The Data Div
+	.blog-data
+	{
+		margin-top: 1rem;
+		font-size: .8rem;
+
+		li
+		{
+			list-style: none;
+			// display: inline-block;
+		}
+	}
+
+	// Misc
+	img
+	{
+		width: 25vw;
+		height: auto;
+	}
+
+	a
+	{
+		color: black;
+	}
+	a:hover
+	{
+		color: #333;
+	}
+	h1
+	{
+		margin-bottom: .6rem;
+	}
+}
+
+.ex-size
+{
+	flex: 0 1 35vw;
+}
+
+@media only screen and (max-width: variables.$large-breakpoint)
+{
+	.blog-preview img
+	{
+		width: 45vw;
+	}
+}
+// End Blog Previews
+
+
+// Major Blog Container
+
+.blog
+{
+	a
+	{
+		color: black;
+	}
+	
+	h1
+	{
+		text-align: center;
+		font-size: 3rem;
+	}
+	
+	img
+	{
+		height: auto;
+	}
+	
+	.comments-area
+	{
+		margin: 3rem 0;
+	}	
+}
+
+// Blog Content
+.blog-content
+{
+	p
+	{
+		margin: 1rem 0;
+	}
+	img
+	{
+		align-self: center;
+	}
+}
+
+@media (max-width: variables.$small-breakpoint)
+{
+	.blog h1
+	{
+		font-size: initial;
+	}
+}
+
+	// Comments
+.comments-area
+{
+	width: 100%;
+}
+
+.comment-body
+{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	margin: 1rem 0;
+	padding: .3rem;
+	@include mixins.main-border();
+
+	.comment-author
+	{
+		flex: 0 1 50%;
+	}
+
+	.comment-meta
+	{
+		flex: 0 0 50%;
+	}
+	
+	p
+	{
+		margin: .5rem 0;
+		flex: 0 0 100%;
+	}
+
+	.avatar
+	{
+		width: initial;
+		height: initial;
+	}
+}
+
+.comment-form-comment
+{
+	display: flex;
+	flex-direction: column;
+}
+	// End Comments
+// End Blog Content
+
+.wp-her-img img
+{
+	height: calc(100vh - 120px);
+	width: 100px;
+}
+
+// Pagination
+.page-numbers
+{
+	margin: .5rem;
+	color: black;
+}
+
+.current
+{
+	color: white;
+	background-color: black;
+	font-weight: bold;
+	
+	padding: 2px;
+	border-radius: 2px;
+}
+
+// End Poor Development
