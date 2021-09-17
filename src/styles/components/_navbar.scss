@@ -1,7 +1,7 @@
 @use '../tools/variables';
 @use '../tools/mixins';
 
-.nav-cell
+nav.nav-cell
 {
 	// So this is referencing the nav keywords in the grid-templates layout.
 	grid-area: nav;
