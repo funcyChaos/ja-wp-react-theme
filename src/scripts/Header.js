@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function Header({ name, description, site_logo })
+function Header({ url, name, description, site_logo })
 {
   const [logo, setLogo] = useState([]);
   const [primaryMenu, setPrimaryMenu] = useState([]);
@@ -30,11 +30,12 @@ function Header({ name, description, site_logo })
 	return(
 		<nav className="nav-cell" id="nav-cell-change">
       {logo &&
-        <img
+        <a href={url} class="nav-brand">
+          <img
           src={logo.source_url}
           alt={logo.alt_text}
-          style={{width: "70px", height: "60px"}}
-        />
+          />
+        </a>
       }
 			<h2>{name}
         {description && 

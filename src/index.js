@@ -24,14 +24,18 @@ function Main()
   // console.log('WP Data',wpData);
 
   const {
+    url,
     name,
     description,
     site_logo
   } = wpData;
 
+  console.log('wp data',wpData);
+
 	return(
 		<>
 			<Header
+        url={url}
         name={name}
         description={description}
         site_logo={site_logo}
