@@ -30,7 +30,7 @@ function Main()
     site_logo
   } = wpData;
 
-  console.log('wp data',wpData);
+  // console.log('wp data',wpData);
 
 	return(
 		<>
