@@ -3,8 +3,7 @@
 get_header(); ?>
 
 <!-- example react component -->
-<div id="render-react-example-here"></div>
-<!-- end example react component -->
+<div class="grid-container-index" id="app"></div>
 
 <?php if (have_posts()) {
   while(have_posts()) {

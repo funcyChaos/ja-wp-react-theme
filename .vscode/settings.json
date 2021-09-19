@@ -1,0 +1,12 @@
+{
+	"files.associations":
+	{
+		"*.js": "javascriptreact"
+	},
+	
+	"launch": {
+
+		"configurations": [],
+		"compounds": []
+	}
+}

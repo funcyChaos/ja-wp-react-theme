@@ -1,6 +1,49 @@
-import './styles/main.scss'
-import ExampleReactComponent from './scripts/ExampleReactComponent'
-import React from 'react'
-import ReactDOM from 'react-dom'
+import './styles/main.scss';
+import Header from './scripts/Header';
+import Hero from './scripts/Hero';
+import ExampleReactComponent from './scripts/ExampleReactComponent';
+import React, { useState, useEffect } from 'react';
+import ReactDOM from 'react-dom';
+import axios from 'axios';
 
-ReactDOM.render(<ExampleReactComponent />, document.querySelector("#render-react-example-here"))
+function Main()
+{
+  const [wpData, setWpData] = useState([]);
+ 
+  useEffect(
+    () => {
+      const apiUrl = 'http://reacttheme.local/wp-json';
+      axios.get(apiUrl).then((response) => {
+        const siteData = response.data;
+        setWpData(siteData);
+      });
+    },
+    [axios, setWpData]
+  );
+
+  // console.log('WP Data',wpData);
+
+  const {
+    url,
+    name,
+    description,
+    site_logo
+  } = wpData;
+
+  // console.log('wp data',wpData);
+
+	return(
+		<>
+			<Header
+        url={url}
+        name={name}
+        description={description}
+        site_logo={site_logo}
+      />
+			<Hero/>
+			<ExampleReactComponent/>
+		</>
+	);
+}
+
+ReactDOM.render(<Main/>, document.getElementById('app'));
