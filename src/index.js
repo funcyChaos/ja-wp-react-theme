@@ -5,6 +5,7 @@ import ExampleReactComponent from './scripts/ExampleReactComponent';
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 function Main()
 {
@@ -33,16 +34,23 @@ function Main()
   // console.log('wp data',wpData);
 
 	return(
-		<>
+		<BrowserRouter>
 			<Header
         url={url}
         name={name}
         description={description}
         site_logo={site_logo}
       />
-			<Hero/>
-			<ExampleReactComponent/>
-		</>
+			<Switch>
+				<Route path="/" exact>
+					<Hero/>
+					<ExampleReactComponent/>
+				</Route>
+				<Route path="router">
+					<Hero/>
+				</Route>
+			</Switch>
+		</BrowserRouter>
 	);
 }
 

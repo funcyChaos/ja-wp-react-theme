@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function Header({ url, name, description, site_logo })
-{
+function Header({url, name, description, site_logo}) {
   const [logo, setLogo] = useState([]);
   const [primaryMenu, setPrimaryMenu] = useState([]);
 
